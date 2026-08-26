@@ -1,0 +1,62 @@
+;
+; ProcessMonitoring.inf
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = System ; TODO: specify appropriate Class
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318} ; TODO: specify appropriate ClassGuid
+Provider    = %ManufacturerName%
+CatalogFile = ProcessMonitoring.cat
+DriverVer   = ; TODO: set DriverVer in stampinf property pages
+PnpLockdown = 1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+ProcessMonitoring.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName% = Standard,NT$ARCH$.10.0...16299 ; %13% support introduced in build 16299
+
+[Standard.NT$ARCH$.10.0...16299]
+%ProcessMonitoring.DeviceDesc% = ProcessMonitoring_Device, Root\ProcessMonitoring ; TODO: edit hw-id
+
+[ProcessMonitoring_Device.NT]
+CopyFiles = File_Copy
+
+[File_Copy]
+ProcessMonitoring.sys
+
+;-------------- Service installation
+[ProcessMonitoring_Device.NT.Services]
+AddService = ProcessMonitoring,%SPSVCINST_ASSOCSERVICE%, ProcessMonitoring_Service_Inst
+
+; -------------- ProcessMonitoring driver install sections
+[ProcessMonitoring_Service_Inst]
+DisplayName    = %ProcessMonitoring.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\ProcessMonitoring.sys
+
+[ProcessMonitoring_Device.NT.Wdf]
+KmdfService = ProcessMonitoring, ProcessMonitoring_wdfsect
+
+[ProcessMonitoring_wdfsect]
+KmdfLibraryVersion = $KMDFVERSION$
+
+[Strings]
+SPSVCINST_ASSOCSERVICE = 0x00000002
+ManufacturerName = "<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+DiskName = "ProcessMonitoring Installation Disk"
+ProcessMonitoring.DeviceDesc = "ProcessMonitoring Device"
+ProcessMonitoring.SVCDESC = "ProcessMonitoring Service"

@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37216.2 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Process Monitoring", "Process Monitoring\Process Monitoring.vcxproj", "{B02CD225-0500-F449-1CDA-9FE4594A7E6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B02CD225-0500-F449-1CDA-9FE4594A7E6D}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{B02CD225-0500-F449-1CDA-9FE4594A7E6D}.Debug|ARM64.Build.0 = Debug|ARM64
+		{B02CD225-0500-F449-1CDA-9FE4594A7E6D}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{B02CD225-0500-F449-1CDA-9FE4594A7E6D}.Debug|x64.ActiveCfg = Debug|x64
+		{B02CD225-0500-F449-1CDA-9FE4594A7E6D}.Debug|x64.Build.0 = Debug|x64
+		{B02CD225-0500-F449-1CDA-9FE4594A7E6D}.Debug|x64.Deploy.0 = Debug|x64
+		{B02CD225-0500-F449-1CDA-9FE4594A7E6D}.Release|ARM64.ActiveCfg = Release|ARM64
+		{B02CD225-0500-F449-1CDA-9FE4594A7E6D}.Release|ARM64.Build.0 = Release|ARM64
+		{B02CD225-0500-F449-1CDA-9FE4594A7E6D}.Release|ARM64.Deploy.0 = Release|ARM64
+		{B02CD225-0500-F449-1CDA-9FE4594A7E6D}.Release|x64.ActiveCfg = Release|x64
+		{B02CD225-0500-F449-1CDA-9FE4594A7E6D}.Release|x64.Build.0 = Release|x64
+		{B02CD225-0500-F449-1CDA-9FE4594A7E6D}.Release|x64.Deploy.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8EF5F75F-2C3A-4746-BC56-2A428C124F61}
+	EndGlobalSection
+EndGlobal
